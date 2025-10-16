@@ -31,7 +31,6 @@ namespace MovieLensOLAP_MVC.Models
         public Dictionary<int, User> Users { get; private set; } = new();
         public List<Rating> Ratings { get; private set; } = new();
 
-        // Updated to match your 10M dataset genre names exactly
         public static readonly string[] GenreLabels = new string[]
         {
             "Action","Adventure","Animation","Children","Comedy","Crime","Documentary",
@@ -118,7 +117,6 @@ namespace MovieLensOLAP_MVC.Models
                 return GenerateReportsThreaded(sw);
         }
 
-        // Sequential version
         private (Dictionary<string, List<(int mid, double avg, long cnt)>> reports, double elapsedSeconds)
             GenerateReportsSequential(Stopwatch sw)
         {
@@ -158,7 +156,7 @@ namespace MovieLensOLAP_MVC.Models
             return (reports, sw.Elapsed.TotalSeconds);
         }
 
-        // Threaded version
+   
         private (Dictionary<string, List<(int mid, double avg, long cnt)>> reports, double elapsedSeconds)
             GenerateReportsThreaded(Stopwatch sw)
         {
