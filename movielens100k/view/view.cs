@@ -40,7 +40,6 @@ namespace MovieLensOLAP_MVC.View
         {
             Console.WriteLine($"Time taken: {seconds:F2} seconds");
         }
-
         public static void Pause()
         {
             Console.WriteLine("Press Enter to continue...");
